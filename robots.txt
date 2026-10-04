@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marketward.io/sitemap.xml

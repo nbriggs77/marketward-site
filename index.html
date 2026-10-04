@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketward | AI Marketing for Real Estate Agents</title>
+<meta name="description" content="AI-powered branded content, local-market marketing and video for real estate agents — with review controls and protected local territories.">
+<meta name="robots" content="index,follow">
+<!-- OpenGraph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marketward — Your AI marketing department for real estate">
+<meta property="og:description" content="Own your local market online. Branded posts, local-market content and video for real estate agents — you approve every post.">
+<meta property="og:site_name" content="Marketward">
+<meta property="og:url" content="https://marketward.io/">
+<link rel="canonical" href="https://marketward.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0C1C2E">
+<!-- Favicon: bronze territory-contour mark -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230C1C2E'/%3E%3Cpath d='M6 20c5-1 7-9 10-9s4 6 10 5' fill='none' stroke='%23C2873B' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='13' r='2.2' fill='%23C2873B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1C2E; --ink-700:#16304b; --paper:#F6F2EA; --surface:#FFFFFF;
+  --prime:#C2873B; --prime-deep:#9A6A28; --slate:#53657A; --line:rgba(12,28,46,.12);
+  --paper-70:rgba(246,242,234,.72); --paper-40:rgba(246,242,234,.4);
+  --r:14px; --r-sm:10px;
+  --fs-display-xl:clamp(2.6rem,6vw,4.75rem);
+  --fs-display:clamp(2rem,4vw,3rem);
+  --fs-h2:clamp(1.5rem,2.4vw,2.1rem);
+  --space-section:clamp(64px,10vw,128px);
+  --container:min(1180px,100% - 48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);
+  color:var(--ink);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:Fraunces,Georgia,serif;line-height:1.05;font-weight:500;letter-spacing:-.01em}
+a{color:inherit}
+.container{width:var(--container);margin-inline:auto}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;font-weight:600;color:var(--prime-deep)}
+section.dark .eyebrow{color:var(--prime)}
+.section{padding-block:var(--space-section)}
+.lede{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--slate);max-width:62ch}
+section.dark .lede{color:var(--paper-70)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:1rem;
+  padding:14px 22px;border-radius:var(--r-sm);text-decoration:none;border:1px solid transparent;
+  cursor:pointer;transition:background .18s ease,border-color .18s ease,color .18s ease;min-height:48px}
+.btn-primary{background:var(--prime);color:var(--ink)}
+.btn-primary:hover{background:var(--prime-deep);color:var(--paper)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:rgba(12,28,46,.05)}
+section.dark .btn-ghost{color:var(--paper);border-color:rgba(246,242,234,.28)}
+section.dark .btn-ghost:hover{background:rgba(246,242,234,.08)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+section.dark a:focus-visible{outline-color:var(--prime)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(246,242,234,.82);
+  backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.wordmark{display:inline-flex;align-items:center;gap:10px;font-family:Fraunces,Georgia,serif;
+  font-weight:600;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none}
+.wordmark .mark{width:30px;height:30px;flex:0 0 auto}
+.wordmark b{color:var(--prime-deep);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{text-decoration:none;color:var(--slate);font-weight:500;font-size:.96rem}
+.nav-links a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;min-height:40px}
+@media(max-width:760px){.nav-links a:not(.btn){display:none}}
+
+/* Territory lockup */
+.lockup{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:999px;
+  border:1px solid var(--line);background:var(--surface);font-size:.85rem;font-weight:600;color:var(--ink-700)}
+section.dark .lockup{background:rgba(246,242,234,.06);border-color:rgba(246,242,234,.2);color:var(--paper)}
+.lockup svg{color:var(--prime)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero .contour{position:absolute;inset:0;z-index:0;color:var(--prime);opacity:.1;pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero-grid{display:grid;gap:40px;align-items:center;padding-block:clamp(48px,8vw,104px) var(--space-section)}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:64px}}
+.hero h1{font-size:var(--fs-display-xl);margin:18px 0 0}
+.hero h1 .accent{font-style:italic;color:var(--prime-deep)}
+.hero .lede{margin-top:20px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-aside{display:flex;flex-direction:column;gap:14px}
+
+/* Generic card */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;
+  transition:box-shadow .2s ease,transform .2s ease}
+.card:hover{box-shadow:0 18px 40px -24px rgba(12,28,46,.4)}
+.grid{display:grid;gap:20px}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.cols-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.pillar h3{font-size:1.3rem;margin:14px 0 8px}
+.pillar p{color:var(--slate);font-size:1rem}
+.pnum{font-family:Fraunces,Georgia,serif;font-size:1.1rem;color:var(--prime-deep);
+  border:1px solid var(--line);width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-weight:600}
+.section-head{max-width:64ch;margin-bottom:44px}
+.section-head h2{font-size:var(--fs-h2);margin-top:12px}
+
+/* Dark sections */
+section.dark{background:var(--ink);color:var(--paper)}
+section.dark h2,section.dark h3{color:var(--paper)}
+section.dark .card{background:var(--ink-700);border-color:rgba(246,242,234,.14)}
+section.dark .pnum{border-color:rgba(246,242,234,.22);color:var(--prime)}
+
+/* Sample content cards (proof) */
+.samples{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.sample{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;color:var(--ink);display:flex;flex-direction:column}
+.sample .chip{position:absolute;top:10px;right:10px;font-size:.66rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 8px;border-radius:6px}
+.sample .frame{aspect-ratio:4/5;padding:18px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(160deg,#fff, #efe9dd)}
+.sample.reel .frame{aspect-ratio:9/16;background:linear-gradient(165deg,var(--ink),var(--ink-700));color:var(--paper)}
+.sample .kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--prime-deep);font-weight:700}
+.sample.reel .kicker{color:var(--prime)}
+.sample .big{font-family:Fraunces,Georgia,serif;font-size:1.3rem;line-height:1.12;margin-top:auto}
+.sample .meta{font-size:.8rem;color:var(--slate);padding:12px 16px;border-top:1px solid var(--line);background:var(--surface)}
+.sample.reel .play{width:46px;height:46px;border-radius:50%;background:rgba(246,242,234,.16);
+  display:grid;place-items:center;align-self:flex-start}
+.dots{display:flex;gap:5px;margin-top:12px}
+.dots span{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--prime)}
+
+/* Twin */
+.twin{display:grid;gap:40px;align-items:center}
+@media(min-width:860px){.twin{grid-template-columns:1fr 1fr}}
+.twin-visual{aspect-ratio:4/3;border-radius:var(--r);background:
+  radial-gradient(120% 120% at 30% 20%,var(--ink-700),var(--ink));border:1px solid rgba(246,242,234,.14);
+  position:relative;overflow:hidden;display:grid;place-items:center}
+.twin-visual .ring{width:132px;height:132px;border-radius:50%;border:2px solid var(--prime);
+  display:grid;place-items:center;color:var(--paper);font-family:Fraunces,Georgia,serif;font-size:2.2rem}
+.twin-visual .chip{position:absolute;bottom:14px;left:14px;font-size:.66rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--prime);color:var(--ink);padding:4px 8px;border-radius:6px}
+
+/* Territory */
+.terr{position:relative;overflow:hidden}
+.terr .contour{position:absolute;inset:0;color:var(--prime);opacity:.14;z-index:0}
+.terr .container{position:relative;z-index:1}
+.terr-cities{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.terr-cities span{border:1px solid rgba(246,242,234,.26);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:500}
+.terr-cities span b{color:var(--prime);font-weight:700}
+
+/* Pricing */
+.price-note{display:inline-block;margin-top:10px;font-size:.82rem;font-weight:600;color:var(--prime-deep);
+  background:rgba(194,135,59,.12);border:1px solid rgba(194,135,59,.3);padding:6px 12px;border-radius:999px}
+.tiers{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:40px}
+.tier{display:flex;flex-direction:column}
+.tier.feat{border-color:var(--prime);box-shadow:0 0 0 1px var(--prime)}
+.tier .name{font-weight:700;font-size:1.05rem}
+.tier .amt{font-family:Fraunces,Georgia,serif;font-size:2.3rem;margin:10px 0 2px}
+.tier .amt small{font-size:.9rem;font-family:Inter,sans-serif;color:var(--slate);font-weight:500}
+.tier ul{list-style:none;margin:18px 0 0;display:grid;gap:9px}
+.tier li{display:flex;gap:9px;font-size:.95rem;color:var(--slate)}
+.tier li svg{color:var(--prime-deep);flex:0 0 auto;margin-top:3px}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--prime-deep);margin-bottom:6px}
+
+/* Trust */
+.trust-row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:36px}
+.trust-row .card p{color:var(--slate);font-size:.96rem;margin-top:6px}
+.check{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;
+  background:rgba(194,135,59,.14);color:var(--prime-deep)}
+
+/* Final CTA */
+.final{text-align:center}
+.final h2{font-size:var(--fs-display);max-width:16ch;margin:14px auto 0}
+.final .hero-ctas{justify-content:center}
+
+/* Footer */
+footer{background:var(--ink);color:var(--paper-70);padding-block:48px;font-size:.9rem}
+footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+footer a{color:var(--paper);text-decoration:none}footer a:hover{color:var(--prime)}
+footer .legal{margin-top:24px;padding-top:20px;border-top:1px solid rgba(246,242,234,.14);
+  color:var(--paper-40);max-width:70ch;line-height:1.6}
+
+/* Scroll reveal (motion-safe only) */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="btn-ghost" href="#main" style="position:absolute;left:-9999px;top:0;z-index:50"
+   onfocus="this.style.left='12px';this.style.top='12px'" onblur="this.style.left='-9999px'">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="wordmark" href="#main" aria-label="Marketward home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0C1C2E"/><path d="M6 20c5-1 7-9 10-9s4 6 10 5" fill="none" stroke="#C2873B" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="13" r="2.2" fill="#C2873B"/></svg>
+      <span>Market<b>ward</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#territory">Territory</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn btn-primary" href="#demo">See a demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="contour" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M-20 120C200 60 360 180 560 140S960 40 1240 120"/>
+      <path d="M-20 200C220 150 380 260 580 220S980 130 1240 210"/>
+      <path d="M-20 290C240 250 400 350 600 310S1000 230 1240 300"/>
+      <path d="M-20 380C240 350 420 440 620 400S1020 330 1240 390"/>
+    </g>
+  </svg>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">AI marketing for real estate agents</span>
+      <h1>Your AI marketing <span class="accent">department</span> for real estate.</h1>
+      <p class="lede">Create consistent, local, branded real estate marketing without building every
+        post yourself. You stay focused on listings, buyers and sellers — the content keeps coming,
+        and you approve it before it goes out.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#demo">See what Marketward could create for my business</a>
+        <a class="btn btn-ghost" href="#territory">Check my territory</a>
+      </div>
+    </div>
+    <aside class="hero-aside" aria-label="At a glance">
+      <span class="lockup"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> One agent · One territory · Your brand everywhere</span>
+      <div class="card">
+        <span class="eyebrow">Own your local market online</span>
+        <p style="margin-top:10px;color:var(--slate)">Branded posts, local-market topics, listing and
+          open-house content and short-form video — planned, produced and ready for your review.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- VALUE PILLARS -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What you get</span>
+      <h2>A marketing department that never clocks off — and never posts without you.</h2>
+    </div>
+    <div class="grid cols-3">
+      <article class="card pillar reveal"><div class="pnum">1</div><h3>Always-on content</h3>
+        <p>Branded posts, carousels, short-form video and local-market topics — plus listing and
+           open-house content — produced on a plan, not in a panic.</p></article>
+      <article class="card pillar reveal"><div class="pnum">2</div><h3>Your brand</h3>
+        <p>Your identity, drawn from your business and website — consistent across every post, with an
+           optional on-screen presenter or Digital Twin.</p></article>
+      <article class="card pillar reveal"><div class="pnum">3</div><h3>Local-market focus</h3>
+        <p>Content built around your city, ZIP and territory — local subjects that speak to the buyers
+           and sellers actually in your market.</p></article>
+      <article class="card pillar reveal"><div class="pnum">4</div><h3>Human control</h3>
+        <p>You review and approve every post before it publishes. During the pilot, nothing auto-posts
+           — your name only goes on what you approve.</p></article>
+      <article class="card pillar reveal"><div class="pnum">5</div><h3>An AI marketing department</h3>
+        <p>The planning and the repetitive production are handled for you, so your hours go to listings,
+           buyers and sellers — not to making posts.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / SAMPLES -->
+<section class="section dark" id="work">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What it looks like</span>
+      <h2>Real formats, on your brand. These are samples — your content is built from your business.</h2>
+      <p class="lede" style="margin-top:14px">We don't show other agents' results as if they were yours.
+        Below are example formats; run a free demo to see these built for your business.</p>
+    </div>
+    <div class="samples">
+      <div class="sample"><span class="chip">Sample</span>
+        <div class="frame"><span class="kicker">New listing</span>
+          <div class="big">Just listed in your market — here's what makes it worth a look.</div></div>
+        <div class="meta">Branded feed post</div></div>
+      <div class="sample"><span class="chip">Sample</span>
+        <div class="frame"><span class="kicker">Seller education</span>
+          <div class="big">5 things to do before your listing photos.</div>
+          <div class="dots"><span class="on"></span><span></span><span></span><span></span></div></div>
+        <div class="meta">Carousel · 5 slides</div></div>
+      <div class="sample reel"><span class="chip">Sample</span>
+        <div class="frame"><span class="kicker">Local market</span><div class="play" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="big">What "days on market" really tells you.</div></div>
+        <div class="meta">Short-form video</div></div>
+      <div class="sample reel"><span class="chip">Sample</span>
+        <div class="frame"><span class="kicker">On camera</span><div class="play" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="big">Your weekly local-market update — presented by you.</div></div>
+        <div class="meta">Presenter / Digital Twin</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL TWIN -->
+<section class="section" id="twin">
+  <div class="container twin">
+    <div>
+      <span class="eyebrow">Presenter &amp; Digital Twin</span>
+      <h2 style="font-size:var(--fs-h2);margin-top:12px">Put yourself in the content without recording every video.</h2>
+      <p class="lede" style="margin-top:16px">Agent-branded video with an optional AI presenter or your
+        own Digital Twin. You set the direction, the scripts stay on your message, and you approve each
+        one before it goes out. It's your face on your marketing — without filming every week.</p>
+      <p style="margin-top:14px;color:var(--slate);font-size:.95rem">No staged realism claims and no live
+        interaction — a produced, on-brand video you sign off.</p>
+    </div>
+    <div class="twin-visual" role="img" aria-label="Illustration of an agent-presented video">
+      <div class="ring">You</div><span class="chip">Sample</span>
+    </div>
+  </div>
+</section>
+
+<!-- TERRITORY -->
+<section class="section dark terr" id="territory">
+  <svg class="contour" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M-20 90C220 40 380 150 600 110S1000 30 1240 100"/>
+      <path d="M-20 190C240 150 420 250 620 210S1020 140 1240 200"/>
+      <path d="M-20 300C240 270 420 360 620 320S1020 250 1240 300"/>
+    </g>
+  </svg>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Territory protection</span>
+      <h2>One agent. One territory.</h2>
+      <p class="lede" style="margin-top:14px">Marketward is designed to protect local positioning by
+        limiting participation within agreed territories — so you're not sharing an AI voice with the
+        agent down the street. No fake countdowns, no invented scarcity: just a clear local boundary.</p>
+    </div>
+    <div class="terr-cities" aria-label="Pilot markets">
+      <span>Scottsdale, <b>AZ</b></span><span>Naples, <b>FL</b></span>
+      <span>Tampa, <b>FL</b></span><span>Charlotte, <b>NC</b></span>
+      <span style="opacity:.7">more markets opening</span>
+    </div>
+    <div class="hero-ctas" style="margin-top:30px"><a class="btn btn-primary" href="#demo">Check my territory</a></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple plans, built around one agent and one market.</h2>
+      <span class="price-note">Pilot pricing — indicative, no checkout yet</span>
+    </div>
+    <div class="tiers">
+      <div class="card tier"><div class="name">Agent</div>
+        <div class="amt">$79<small>/mo</small></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Automated local content</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Core channels</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> One territory</li>
+        </ul></div>
+      <div class="card tier"><div class="name">Agent Pro</div>
+        <div class="amt">$149<small>/mo</small></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Everything in Agent</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Richer image &amp; video</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Approval controls</li>
+        </ul></div>
+      <div class="card tier feat"><span class="tag">Most popular</span><div class="name">AI Agent</div>
+        <div class="amt">$249<small>/mo</small></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Everything in Agent Pro</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Presenter / Digital Twin</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Advanced video</li>
+        </ul></div>
+      <div class="card tier"><div class="name">Team / Market Exclusive</div>
+        <div class="amt">$349–499<small>/mo</small></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Multiple users</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Stronger territory rights</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Team controls</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section dark" id="trust">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Built for professionals</span>
+      <h2>Marketing you can stand behind.</h2>
+      <p class="lede" style="margin-top:14px">Built with review and approval controls for professional
+        real estate marketing. You approve every post; Fair-Housing-aware guidance is applied to how
+        content is written; and during the pilot nothing publishes automatically.</p>
+    </div>
+    <div class="trust-row">
+      <div class="card"><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span><h3 style="font-size:1.1rem;margin-top:12px">You approve everything</h3><p>No post goes out until you say so.</p></div>
+      <div class="card"><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a7 7 0 0 1 7 7v3l2 4H3l2-4V9a7 7 0 0 1 7-7z"/></svg></span><h3 style="font-size:1.1rem;margin-top:12px">Fair-Housing-aware</h3><p>Content describes the home and the process — never who it's "for".</p></div>
+      <div class="card"><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3 style="font-size:1.1rem;margin-top:12px">Grounded in facts</h3><p>No invented sales, prices or market statistics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final" id="demo">
+  <div class="container">
+    <span class="eyebrow">Free demo</span>
+    <h2 class="display">See what Marketward could create for your market.</h2>
+    <p class="lede" style="margin:16px auto 0;">Enter your business and website — we'll build three
+      real content assets for your market, free, no card required. You'll see your brand, your local
+      subjects and your formats before you decide anything.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#demo">See what Marketward could create for my business</a>
+      <a class="btn btn-ghost" href="#territory">Check my territory</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="top">
+      <a class="wordmark" href="#main" style="color:var(--paper)">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#16304b"/><path d="M6 20c5-1 7-9 10-9s4 6 10 5" fill="none" stroke="#C2873B" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="13" r="2.2" fill="#C2873B"/></svg>
+        <span>Market<b>ward</b></span></a>
+      <nav aria-label="Footer" style="display:flex;gap:22px;flex-wrap:wrap">
+        <a href="#how">How it works</a><a href="#territory">Territory</a>
+        <a href="#pricing">Pricing</a><a href="#demo">Free demo</a>
+      </nav>
+    </div>
+    <p class="legal">Marketward is the US service name of the Content Engine platform. Marketing is
+      produced with review and approval controls; a person approves content before it is published.
+      Marketward does not provide legal advice and makes no guarantee of leads, sales or outcomes.
+      Pilot pricing is indicative and not a live offer for sale.</p>
+    <p class="legal" style="margin-top:8px">© <span id="y"></span> Marketward. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  // Motion-safe scroll reveal; no-op under reduced motion.
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+</body>
+</html>
